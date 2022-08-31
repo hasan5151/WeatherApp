@@ -1,0 +1,107 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-kapt"
+    id "kotlin-parcelize"
+    id "dagger.hilt.android.plugin"
+}
+
+android {
+    def baseUrl = "BASE_URL"
+    def citySearchUrl = "CITY_SEARCH_URL"
+    def appId = "APPID"
+    def cityToken = "CITY_TOKEN"
+
+    compileSdkVersion = rootProject.compileSdk
+    buildToolsVersion = rootProject.buildTools
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+        buildConfigField("String", baseUrl, "\"https://api.openweathermap.org\"")
+        buildConfigField("String", citySearchUrl, "\"https://www.akgunstudio.com/\"")
+        buildConfigField "String", appId, '"060fc728d9d8a35384c749ea2327a8e0"'
+        buildConfigField "String", cityToken, '"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzMXppRk1rUkxySllLRGttY2p5c0FqelZ0UzRrMUdmd1Ruek5GT0VJYjk0In0.eyJleHAiOjE2NjM1NjQ5NTgsImlhdCI6MTY2MTgzNjk1OCwianRpIjoiNDNmZDAxZjktNTA1MC00OTlhLWE5ZDAtNGYxZTUyNWU3ZTUzIiwiaXNzIjoiaHR0cHM6Ly9hcGkuYmVlbGluZS5rZy9hdXRoL3JlYWxtcy9za3ltb2JpbGUiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZjowMmEyOWVkMi1kZTI0LTQ2YTgtOWI2MC05NjM2ODAwNDZjMDc6MzU0NjMxMCIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vYmlsZSIsInNlc3Npb25fc3RhdGUiOiI2NjNkM2U3My1kY2Y5LTQ0NjUtYjY0NS0wYmI2NDVhMTE5MzEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4NCIsImh0dHA6Ly9sb2NhbGhvc3Q6ODA5NCIsImh0dHA6Ly9sb2NhbGhvc3Q6ODA4NSIsImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MCIsImh0dHA6Ly9sb2NhbGhvc3Q6ODQ0NCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib2ZmbGluZV9hY2Nlc3MgZW1haWwgcHJvZmlsZSIsInNpZCI6IjY2M2QzZTczLWRjZjktNDQ2NS1iNjQ1LTBiYjY0NWExMTkzMSIsInN1YnNjcmlwdGlvbl9pZCI6IjM1NDYzMTAiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImdlbmRlciI6Im1hbGUiLCJwcm9maWxlIjoiMjExNzM5Mjk5OCIsIm5pY2tuYW1lIjoiMjExNzM5Mjk5OCIsIm5hbWUiOiJIVVpFWUZFIFNNIEFLR1VsTiIsInByZWZlcnJlZF91c2VybmFtZSI6IjM1NDYzMTAiLCJtc2lzZG4iOiI5OTY3NzEyMDQ1NDkiLCJnaXZlbl9uYW1lIjoiSFVaRVlGRSIsImxvY2FsZSI6InJ1IiwiZmFtaWx5X25hbWUiOiJTTSBBS0dVbE4iLCJlbWFpbCI6IiJ9.ANlAwHssNOgZqeQYAV0Zudtv9FGdSonmFrbRqhSKPN1VdSh9liw3hrSKcLKgqapEIMHyvTT6fSQWBpDRGVKUCv-PLQIzUPmSrt58bxgCyHa5khasx2dYuXds3wjhp1wZg2F1wSb2bez9ORtewkGTsnxirrmuRatlF8-JjHC0t2apO6EwYK-NCFV5zyXLSA_OxfAAtOAziinyfg0fHXeaKuaeay1W5fEc_D5FHUROtJ_CbfUNTbAs6j3lSzbA2kDINgIrdrokRrmumzmZbYgm0r-ljAtDnG18z5PQqaclv3r0kDZ2uUvEOx_ysF8vTEES3m85tNnXMvUTHvRUR3J56g"'
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            buildConfigField("String", "VERSION_NAME", "\"${rootProject.versionName}\"")
+        }
+
+        debug {
+            buildConfigField("String", "VERSION_NAME", "\"${rootProject.versionName}-dev\"")
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled = true
+    }
+}
+
+dependencies {
+
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:${rootProject.desugar}")
+
+    //Coroutines
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.coroutine}")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.coroutine}")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${rootProject.coroutine}")
+
+    //AndroidX
+    api("androidx.core:core-ktx:${rootProject.ktx}")
+    api("androidx.appcompat:appcompat:${rootProject.appCompat}")
+    api("androidx.activity:activity-ktx:${rootProject.activityKtx}")
+    api("androidx.fragment:fragment-ktx:${rootProject.fragmentKtx}")
+
+    //UI
+    api("com.google.android.material:material:${rootProject.material}")
+    api("androidx.constraintlayout:constraintlayout:${rootProject.constraint}")
+
+    //Navigation
+    api("androidx.navigation:navigation-runtime-ktx:${rootProject.navigation}")
+    api("androidx.navigation:navigation-fragment-ktx:${rootProject.navigation}")
+    api("androidx.navigation:navigation-ui-ktx:${rootProject.navigation}")
+
+    //Lifecycle
+    api("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.lifecycle}")
+    api("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.lifecycle}")
+    api("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.lifecycle}")
+    api("androidx.lifecycle:lifecycle-common-java8:${rootProject.lifecycle}")
+
+    //Network
+    api("com.squareup.okhttp3:okhttp:${rootProject.okHttp}")
+    api("com.squareup.retrofit2:retrofit:${rootProject.retrofit}")
+    api("com.squareup.retrofit2:converter-moshi:${rootProject.retrofit}")
+    api("com.squareup.retrofit2:converter-scalars:${rootProject.retrofit}")
+    api("com.squareup.moshi:moshi:${rootProject.moshi}")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:${rootProject.moshi}")
+    implementation "com.squareup.moshi:moshi-kotlin:$rootProject.moshi"
+    implementation("com.localebro:okhttpprofiler:${rootProject.httpProfiler}")
+    implementation("com.squareup.okhttp3:logging-interceptor:${rootProject.okHttp}")
+
+    //Storage
+    api("androidx.room:room-ktx:${rootProject.room}")
+    api("androidx.room:room-runtime:${rootProject.room}")
+    api("androidx.room:room-paging:${rootProject.room}")
+    kapt("androidx.room:room-compiler:${rootProject.room}")
+    api("androidx.preference:preference-ktx:${rootProject.preferences}")
+
+    //Dependency Injection
+    implementation("com.google.dagger:hilt-android:${rootProject.hilt}")
+    kapt("com.google.dagger:hilt-compiler:${rootProject.hilt}")
+
+    //location
+    implementation "com.google.android.gms:play-services-location:${rootProject.location}"
+
+    api("com.github.bumptech.glide:glide:${rootProject.glide}")
+}

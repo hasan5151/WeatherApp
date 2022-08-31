@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--General-->
+    <string name="cancel">Отменить</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="ready">Готово</string>
+    <string name="btn_continue">Продолжить</string>
+    <string name="connect">Подключить</string>
+    <string name="keep">Оставить</string>
+    <string name="open">Открыть</string>
+    <string name="select">Выбрать</string>
+    <string name="location">Местоположение</string>
+    <string name="selected">Выбрано:</string>
+    <string name="retry">повторить попытку</string>
+    <string name="close">Закрыть</string>
+    <string name="further">Далее</string>
+    <string name="date">Дата</string>
+
+    <!--Date-->
+    <string name="today">Сегодня</string>
+
+    <!--Permissions-->
+    <string name="perms_required">Для работы приложения небходимы разрешения</string>
+    <string name="perms_gps_required">Для работы приложения небходимы разрешения к геолокации</string>
+
+    <!--Errors-->
+    <string name="error_gps">Ошибка настроек GPS</string>
+
+
+</resources>

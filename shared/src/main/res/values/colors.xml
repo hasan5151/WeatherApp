@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFCD00</color>
+    <color name="colorPrimarySurface">#66FFCD00</color>
+    <color name="colorPrimaryVariant">#ffffff</color>
+    <color name="colorSecondary">#FFCD00</color>
+    <color name="colorSecondaryVariant">#2196F3</color>
+
+    <color name="colorBackground">#000000</color>
+    <color name="colorSurface">#232325</color>
+    <color name="colorSurfaceOver">#39393B</color>
+    <color name="colorSurfaceOverlay">#14FFFFFF</color>
+
+    <color name="textColorPrimary">#EDEDED</color>
+    <color name="textColorSecondary">#909090</color>
+
+    <color name="colorControlActivated">@color/colorPrimary</color>
+    <color name="colorControlNormal">@color/colorPrimary</color>
+    <color name="colorControlHighlight">#ffffff</color>
+
+    <color name="colorDivider">#33FFFFFF</color>
+    <color name="colorBorder">#909090</color>
+
+    <color name="colorOutline">#909090</color>
+
+    <color name="colorIcon">#636B79</color>
+
+    <color name="colorOnPrimary">@color/colorWhite</color>
+    <color name="colorOnSecondary">@color/colorWhite</color>
+    <color name="colorOnBackground">@color/textColorPrimary</color>
+    <color name="colorOnSurface">@color/textColorPrimary</color>
+    <color name="colorOnError">@color/colorWhite</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorError">#e45356</color>
+    <color name="colorSuccess">#50D890</color>
+    <color name="colorSuccessAlpha">#1A50D890</color>
+    <color name="transparent">#0fff</color>
+
+    <color name="buttonTextColor">#272C36</color>
+
+
+    <color name="loadingOverlay">#99272C36</color>
+
+
+</resources>

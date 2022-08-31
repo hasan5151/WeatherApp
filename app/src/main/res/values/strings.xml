@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="feels_like">"Ощущается как %1$d °"</string>
+    <string name="do_you_want_to_add">вы хотите добавить в свой список?</string>
+    <string name="perms_gps_required">Для работы приложения небходимы разрешения к геолокации</string>
+
+</resources>

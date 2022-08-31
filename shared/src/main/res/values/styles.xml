@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--Toolbar-->
+    <style name="AppTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
+        <item name="android:background">@color/transparent</item>
+        <item name="titleTextColor">@color/colorWhite</item>
+        <item name="subtitleTextColor">@color/textColorSecondary</item>
+        <item name="android:theme">@style/ToolbarTheme</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.MaterialComponents.Dark">
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="actionMenuTextColor">@color/colorWhite</item>
+    </style>
+
+    <!--Text Group-->
+    <style name="Headline_1">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Headline_2">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Headline_3">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Headline_4">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SubTitle">
+        <item name="android:textSize">@dimen/text_size_h4</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <!--Button Group-->
+
+    <style name="AppTheme.Button" parent="Base.MaterialButton">
+        <item name="iconTint">@color/btn_main_text_color</item>
+    </style>
+
+    <style name="AppTheme.Button.Text" parent="Base.MaterialButton.Text" />
+
+    <style name="AppTheme.Button.Outlined" parent="Base.MaterialButton.Outlined">
+        <item name="strokeColor">@color/btn_primary_text_color</item>
+    </style>
+
+    <style name="AppTheme.Button.Outlined.Checkable" parent="Base.MaterialButton.Outlined">
+        <item name="strokeColor">@color/btn_outline_stroke_color_checkable</item>
+        <item name="android:textColor">@color/btn_primary_text_color_check</item>
+        <item name="android:checkable">true</item>
+    </style>
+
+    <style name="AppTheme.Button.Surface" parent="Base.MaterialButton">
+        <item name="backgroundTint">@color/button_surface_bg_color</item>
+        <item name="android:textColor">@color/button_surface_text_color</item>
+        <item name="iconTint">@color/button_surface_text_color</item>
+    </style>
+
+    <style name="AppTheme.Button.Surface.Checkable" parent="Base.MaterialButton">
+        <item name="backgroundTint">@color/btn_surface_bg_checkable</item>
+        <item name="android:textColor">@color/btn_surface_text_checkable</item>
+        <item name="android:checkable">true</item>
+    </style>
+
+    <style name="AppTheme.Button.Checkable" parent="Base.MaterialButton">
+        <item name="android:checkable">true</item>
+        <item name="android:textColor">@color/btn_main_text_color_checkable</item>
+        <item name="backgroundTint">@color/btn_main_bg_color_checkable</item>
+    </style>
+
+    <!--Input Group-->
+    <style name="AppTheme.OutlineBox" parent="Base.Input">
+        <item name="android:minHeight">@dimen/text_input_height</item>
+    </style>
+
+    <style name="AppTheme.BottomSheetTheme" parent="Base.BottomSheet.ThemeOverlay">
+        <item name="materialButtonStyle">@style/AppTheme.Button</item>
+    </style>
+
+    <style name="AppTheme.Slider" parent="Widget.MaterialComponents.Slider">
+        <item name="tickColorActive">@color/slider_tick_active</item>
+    </style>
+
+    <!--Snack Bar Group-->
+    <style name="AppTheme.Snackbar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:gravity">bottom</item>
+        <item name="actionTextColorAlpha">1</item>
+    </style>
+
+    <style name="AppTheme.Snackbar.Text" parent="Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:maxLines">7</item>
+    </style>
+
+    <style name="AppTheme.Snackbar.Button" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="android:layout_gravity">bottom|right|end</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="actionTextColorAlpha">1</item>
+    </style>
+
+</resources>

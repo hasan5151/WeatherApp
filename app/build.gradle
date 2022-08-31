@@ -1,0 +1,59 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-kapt"
+    id "kotlin-parcelize"
+    id "androidx.navigation.safeargs.kotlin"
+    id "dagger.hilt.android.plugin"
+}
+
+android {
+    compileSdk = rootProject.compileSdk
+    buildToolsVersion = rootProject.buildTools
+
+    defaultConfig {
+        applicationId "com.huzi.forecast"
+        minSdk rootProject.minSdk
+        targetSdk rootProject.targetSdk
+        versionCode = rootProject.versionCode
+        versionName = rootProject.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation(project(":shared"))
+
+    //di
+    implementation "com.google.dagger:hilt-android:${rootProject.hilt}"
+    kapt "com.google.dagger:hilt-compiler:${rootProject.hilt}"
+
+    //Network
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:${rootProject.moshi}"
+
+    //Storage
+    kapt("androidx.room:room-compiler:${rootProject.room}")
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

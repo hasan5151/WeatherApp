@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="animation_long">800</integer>
+    <integer name="animation_short">500</integer>
+    <integer name="transition_long">400</integer>
+    <integer name="transition_short">250</integer>
+    <!--<integer name="transition_long">500</integer>
+    <integer name="transition_short">300</integer>-->
+</resources>
