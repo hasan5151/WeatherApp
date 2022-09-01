@@ -52,7 +52,7 @@ class LaunchFragment : BaseFragment<FragmentLaunchBinding>() {
     private fun setupViewpager() = with(binding) {
         viewPager.adapter = weatherAdapter
         TabLayoutMediator(tabLayout, viewPager) { tab, position -> }.attach()
-        viewPager.currentItem = 1
+        viewPager.setCurrentItem(1,false)
         viewPager.offscreenPageLimit = 2
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
