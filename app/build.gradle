@@ -7,6 +7,12 @@ plugins {
     id "dagger.hilt.android.plugin"
 }
 
+task generateVersionTxt {
+    doLast {
+        file("./version.txt").text = android.defaultConfig.versionName
+    }
+}
+
 android {
     compileSdk = rootProject.compileSdk
     buildToolsVersion = rootProject.buildTools
