@@ -28,3 +28,10 @@ jobs:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
        APP_FOLDER: app
        RELEASE_TITLE: New Build
+    - name: send telegram message on push
+      uses: appleboy/telegram-action@master
+      with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            test mesaj
